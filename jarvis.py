@@ -10,6 +10,8 @@ import webbrowser
 import os
 import smtplib
 
+MASTER = "Mam"
+
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
@@ -23,15 +25,15 @@ def speak(audio):
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
-        speak("Good Morning Mam!")
+        speak("Good Morning!" + MASTER)
 
     elif hour>=12 and hour<18:
-        speak("Good Afternoon Mam!")
+        speak("Good Afternoon!" + MASTER)
 
     else:
-        speak("Good Evening Mam!")
+        speak("Good Evening!" + MASTER)
 
-    speak("I am Jarvis Me Please tell me how may I help you")
+    speak("I am Jarvis Me Please tell me mam how may I help you")
 
 def takeCommand():
     r = sr.Recognizer()
